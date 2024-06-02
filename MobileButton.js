@@ -1,9 +1,4 @@
 (function() {
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css';
-    document.head.appendChild(link);
-
     var button = document.createElement('button');
     button.innerHTML = '<i class="fas fa-globe"></i>';
     button.style.position = 'fixed';
@@ -14,7 +9,7 @@
     button.style.height = '50px';
     button.style.padding = '10px';
     button.style.borderRadius = '50%';
-    button.style.backgroundColor = 'purple';
+    button.style.backgroundColor = 'gray';
     button.style.color = '#ffffff';
     button.style.border = 'none';
     button.style.display = 'flex';
@@ -25,17 +20,16 @@
 
     document.body.appendChild(button);
 
-    function simulateAltHKeyPress() {
+    function simulateBackslashKeyPress() {
         var event = new KeyboardEvent('keydown', {
-            key: 'h',
-            code: 'KeyH',
-            keyCode: 72,
+            key: '\\',
+            code: 'Backslash',
+            keyCode: 220,
             charCode: 0,
-            bubbles: true,
-            altKey: true
+            bubbles: true
         });
         document.dispatchEvent(event);
     }
 
-    button.addEventListener('click', simulateAltHKeyPress);
+    button.addEventListener('click', simulateBackslashKeyPress);
 })();
